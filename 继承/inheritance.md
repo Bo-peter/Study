@@ -116,3 +116,35 @@ void fun(Int& a)
 }
 ```
 
+```c++
+/*
+* 输出结果 Object fun a 10
+* 静态联编 可访问性 参数 运行前
+* 动态联编 运行时 查询虚表
+*/
+class Base
+{
+public:
+	~Base(){}
+public:
+	virtual void fun(int x = 10) { cout << "Base::Fun x " << x << endl; }
+};
+
+class Object :public Base
+{
+private: 
+	virtual void fun(int a  = 200) {
+		cout << "Object::fun a " << a << endl;
+	}
+};
+
+int main()
+{
+	Object obj;
+	Base* p = &obj;
+	p->fun(5);
+	return 0;
+}
+
+```
+
