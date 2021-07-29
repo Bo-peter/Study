@@ -4,7 +4,11 @@
 * auto_ptr 智能指针
 * 归属权 不明确
 * 拷贝函数 赋值函数无法编写
-*  
+* auto_ptr不能指向数组
+* auto_ptr不能共享所有权
+* auto_ptr不能通过复制操作来初始化
+* auto_ptr不能放入容器中使用
+* auto_ptr不能作为容器的成员
 */
 
 namespace peter 
