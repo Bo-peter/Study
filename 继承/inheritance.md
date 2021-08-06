@@ -1,8 +1,8 @@
 ### Inheritance
 
-![image-20210725120728333](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210725120728333.png)
+![image-20210725120728333](./image_inheritance/image1.png)
 
-![image-20210725124746328](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210725124746328.png)
+![image-20210725124746328](./image_inheritance/image2.png)
 
 ```c++
 // 继承
@@ -105,11 +105,11 @@ int main()
 
 ```
 
-![image-20210725132353468](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210725132353468.png)
+![image-20210725132353468](./image_inheritance/image3.png)
 
 ### 多态
 
-![image-20210725194003983](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210725194003983.png)
+![image-20210725194003983](./image_inheritance/image4.png)
 
 ```c++
 
@@ -192,9 +192,9 @@ operator= 复制语句也有上述情况 但是与其还有不同的表现形式
 
 成员对象 和 继承中 拷贝构造 和 赋值构造 区别 写博客 私有
 
-![image-20210725230731680](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210725230731680.png)
+![image-20210725230731680](./image_inheritance/image6.png)
 
-![image-20210726082758020](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210726082758020.png)
+![image-20210726082758020](./image_inheritance/image7.png)
 
 继承关系中： 不同类之间 同名（无须同参数，同返回值）隐藏  同类中 重载  
 
