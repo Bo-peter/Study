@@ -1,5 +1,6 @@
 ### Thread
 
+```c++
 //std::mutex g_tex;
 //可以与 lock_guard 愉快的玩耍 RAll 行程自动话资源释放
 //std::lock_guard<mutex> lock(g_tex);
@@ -109,7 +110,6 @@ int main()
 	return 0;
 }
 
-
 const int n = 5;
 int g_max = 0;
 void fun(int& x)
@@ -133,6 +133,7 @@ int main()
 	t2.join();
 	cout << x << endl;
 	return 0;
+
 }
 
 
@@ -157,6 +158,7 @@ int main()
 	t1.join();
 	t2.join();
 	return 0;
+
 }
 
 
@@ -180,6 +182,7 @@ int main()
 	t1.join();
 	t2.join();
 	return 0;
+
 }
 
 
@@ -204,4 +207,7 @@ int main()
 	t1.join();
 	t2.join();
 	return 0;
+
 }
+```
+
