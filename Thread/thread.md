@@ -1,5 +1,6 @@
 ### Thread
 
+
 #### 第一天
 
 ```c++
@@ -126,15 +127,16 @@ int main()
 	//std::thread t1(fun, x); //编译无法通过
 	//std::thread t2(fun, x);
 
-    std::thread t1(fun, std::ref(x));
-    std::thread t2(fun, std::ref(x));
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-    t1.join();
-    t2.join();
-    cout << x << endl;
-    return 0;
+	std::thread t1(fun, std::ref(x));
+	std::thread t2(fun, std::ref(x));
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	t1.join();
+	t2.join();
+	cout << x << endl;
+	return 0;
 
 }
+
 
 const int n = 5;
 int g_max = 0;
@@ -153,10 +155,13 @@ int main()
 	std::thread t1(fun,x,&y);
 	std::thread t2(fun,x,&y);
 
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-    t1.join();
-    t2.join();
-    return 0;
+
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	t1.join();
+	t2.join();
+	return 0;
+
+}
 
 }
 
@@ -479,6 +484,7 @@ int main()
 	pro.join();
 	con.join();
 	return 0;
+
 }
 ```
 
