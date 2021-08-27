@@ -74,6 +74,10 @@ int  main()
 ```
 
 ```c++
+//避免了惊群现象
+//但是不能并发生产
+//完成runbuf的实现，模拟视频流
+
 std::counting_semaphore bufStatus_full(1);
 std::counting_semaphore bufStatus_use(1);
 std::counting_semaphore bufGet(0);
@@ -107,6 +111,7 @@ void prudutor_thread()
 			}
 		}
 		bufStatus_use.release();
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 }
 
@@ -123,7 +128,7 @@ void consumer_thread()
 			{
 				cout << buf.front() << "  ";
 				buf.pop_front();
-				cout<<" $" << buf.size() << "$   ";
+				cout << " $" << buf.size() << "$   ";
 				if (buf.size() == MAX - 1)
 				{
 					bufStatus_full.release();
@@ -140,7 +145,6 @@ void consumer_thread()
 			}
 		}
 		bufStatus_use.release();
-		std::this_thread::sleep_for(std::chrono::seconds(2));
 	}
 }
 
@@ -150,11 +154,11 @@ int main()
 {
 	std::thread t1(prudutor_thread);
 	std::thread t2(consumer_thread);
-
+	std::thread t3(consumer_thread);
 	t1.join();
 	t2.join();
+	t3.join();
 	return 0;
 }
-
 ```
 
